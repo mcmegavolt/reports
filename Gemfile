@@ -16,3 +16,4 @@ gem 'spring',        group: :development
 gem 'haml-rails'
 gem 'devise'
 gem 'cancan'
+gem 'twitter-bootstrap-rails'
