@@ -8,28 +8,7 @@
   %body
     .container
       .header
-        %ul.nav.nav-pills.pull-right
-          - unless user_signed_in?
-            %li
-              = link_to new_user_registration_path do
-                %i.icon-user
-                Sign Up
-            %li
-              = link_to new_user_session_path do
-                %i.icon-signin
-                Sign In
-          - else
-            %li{:class => ('active' if controller_name == 'reports' )}
-              = link_to reports_path do
-                Reports
-            - if can? :manage, User
-              %li{:class => ('active' if controller_name == 'users' )}
-                = link_to users_path do
-                  Users
-            %li
-              = link_to destroy_user_session_path, method: 'delete' do
-                %i.icon-signout
-                Sign Out
+        = render 'shared/nav'
         %h3.text-muted
           = link_to root_url do
             Reporting Test App
