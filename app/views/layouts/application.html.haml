@@ -1,9 +1,46 @@
 !!!
 %html
   %head
-    %title Reports
+    %title Reporting Test Application
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     = csrf_meta_tags
   %body
-    = yield
+    .container
+      .header
+        %ul.nav.nav-pills.pull-right
+          - unless user_signed_in?
+            %li
+              = link_to new_user_registration_path do
+                %i.icon-user
+                Sign Up
+            %li
+              = link_to new_user_session_path do
+                %i.icon-signin
+                Sign In
+          - else
+            %li{:class => ('active' if controller_name == 'reports' )}
+              = link_to reports_path do
+                Reports
+            - if can? :update, User
+              %li{:class => ('active' if controller_name == 'users' )}
+                = link_to users_path do
+                  Users
+            %li
+              = link_to destroy_user_session_path, method: 'delete' do
+                %i.icon-signout
+                Sign Out
+        %h3.text-muted
+          = link_to root_url do
+            Reporting Test App
+      - flash.each do |key, value|
+        %div{:class => "alert flash #{key}"}
+          = value
+      = yield
+      .footer
+        %p
+          © Reporting Test App by Aleksandr Ponomarenko 2014
+          - if user_signed_in?
+            %span.pull-right
+              = current_user.email
+              (#{current_user.role.name})

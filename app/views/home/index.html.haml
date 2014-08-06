@@ -1,0 +1,8 @@
+.jumbotron
+  - unless user_signed_in?
+    %h1 Welcome to our Awesome App!
+    %p.lead Before you start using it, please sign up.
+    %p
+      = link_to 'Login', new_user_session_path, class: 'btn btn-lg btn-success'
+      or
+      = link_to 'Sign up', new_user_registration_path

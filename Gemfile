@@ -17,3 +17,7 @@ gem 'haml-rails'
 gem 'devise'
 gem 'cancan'
 gem 'twitter-bootstrap-rails'
+gem 'thin'
+
+gem 'populator'
+gem 'faker'
