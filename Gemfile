@@ -9,15 +9,15 @@ gem 'coffee-rails', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
-gem 'sdoc', '~> 0.4.0',          group: :doc
+gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'spring',        group: :development
+gem 'spring', group: :development
 
 gem 'haml-rails'
 gem 'devise'
 gem 'cancan'
 gem 'twitter-bootstrap-rails'
-gem 'thin'
+gem 'thin', group: :development
 
-gem 'populator'
-gem 'faker'
+gem 'populator', group: :development
+gem 'faker', group: :development

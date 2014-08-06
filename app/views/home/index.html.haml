@@ -6,3 +6,15 @@
       = link_to 'Login', new_user_session_path, class: 'btn btn-lg btn-success'
       or
       = link_to 'Sign up', new_user_registration_path
+  - else
+    %h2 Hi, user!
+    Your role is:
+    %strong= current_user.role.name
+    %br
+    So, you can 
+    = link_to reports_path do
+      manage reports
+    - if can? :manage, User
+      and
+      = link_to users_path do
+        manage users

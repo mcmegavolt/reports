@@ -12,7 +12,7 @@ class User < ActiveRecord::Base
   end 
 
   def set_default_role
-  	self.role = Role.find_by_name('user')
+  	self.role = Role.find_by_name('user') if self.role_id.nil?
   end
 
 end

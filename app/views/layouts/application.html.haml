@@ -22,7 +22,7 @@
             %li{:class => ('active' if controller_name == 'reports' )}
               = link_to reports_path do
                 Reports
-            - if can? :update, User
+            - if can? :manage, User
               %li{:class => ('active' if controller_name == 'users' )}
                 = link_to users_path do
                   Users
