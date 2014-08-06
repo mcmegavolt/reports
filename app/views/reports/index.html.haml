@@ -1,5 +1,16 @@
 .page-header
   %h1 Reports
+
+  = search_form_for @q, :class => 'form-horizontal'  do |f|
+    = f.label :width_eq
+    = f.search_field :width_eq
+    = f.label :height_eq
+    = f.search_field :height_eq
+    = f.label :cost_eq
+    = f.search_field :cost_eq
+    = f.label :comment_cont
+    = f.search_field :comment_cont
+    = f.submit
 %table.table.table-striped
   %thead
     %tr

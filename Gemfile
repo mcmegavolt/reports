@@ -11,13 +11,13 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 
-gem 'spring', group: :development
-
 gem 'haml-rails'
 gem 'devise'
 gem 'cancan'
+gem 'ransack'
 gem 'twitter-bootstrap-rails'
-gem 'thin', group: :development
 
+gem 'thin', group: :development
 gem 'populator', group: :development
 gem 'faker', group: :development
+gem 'spring', group: :development

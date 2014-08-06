@@ -6,9 +6,11 @@ class ReportsController < ApplicationController
 
   def index
     if current_user.admin?
-      @reports = Report.all
+      @q = Report.search(params[:q])
+      @reports = @q.result(distinct: true)
     else
-      @reports = current_user.reports
+      @q = current_user.reports.search(params[:q])
+      @reports = @q.result(distinct: true)
     end
   end
 
