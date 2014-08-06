@@ -14,4 +14,7 @@ Used gems:
 * haml-rails
 * devise
 * cancan
+* ransack
 * twitter-bootstrap-rails
+* populator
+* faker
